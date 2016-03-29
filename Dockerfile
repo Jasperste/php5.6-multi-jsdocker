@@ -1,6 +1,12 @@
 FROM php:5.6-apache
 
-RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev libpq-dev
+RUN apt-get update && apt-get install -y zlib1g-dev libicu-dev libpq-dev \
+        libfreetype6-dev \
+        libjpeg62-turbo-dev \
+        libmcrypt-dev \
+        libpng12-dev \
+
+
 RUN docker-php-ext-install opcache
 RUN docker-php-ext-install intl
 RUN docker-php-ext-install pdo_mysql
